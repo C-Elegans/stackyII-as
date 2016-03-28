@@ -59,7 +59,7 @@ void assemble_pass2(FILE* source, FILE* dest){
 		if((index = strchr(line, (int)':')) != NULL){ //its a label
 			continue;
 		}else{//its an instruction
-			uint16_t instruction = decodeInstruction(line, &labels);
+			uint16_t instruction = decodeInstruction(line, &labels,address);
 			address+=2;
 			fwrite(&instruction, 2, 1, dest);
 		}
