@@ -28,6 +28,10 @@ gt: 0x000C, pushes a 1 if the second value on the stack is greater than the top 
 
 neg: 0x000D, negates the top of the stack
 
+leave:0x000E, moves the base pointer into the stack pointer. used to delete a stack frame
+
+0x000F,0x0010, RESERVED
+
 and: 0x0011, ands the top two values on the stack
 
 or: 0x0012, ors the top two values on the stack
@@ -52,3 +56,7 @@ call: 0x4000,0x0FFF - jumps to the relative address encoded in the instruction, 
 cjump: 0x6000,0x0FFF - pops the top of the stack, and jumps if the value is not zero
 
 push: 0x8000,0x7FFF - pushes the immediate value onto the stack
+
+frame: 0x1000, 0x07FF - pushes the base pointer on the stack, and creates space for X amount of variables 
+
+local: 0x3000,0x07FF - reads the address formed by the immediate value+the base pointer and pushes it onto the stack
