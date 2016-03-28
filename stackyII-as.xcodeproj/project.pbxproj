@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0AEE3EA51CA9B83A006F0348 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE3EA41CA9B83A006F0348 /* main.c */; };
 		0AEE3EAD1CA9BC0F006F0348 /* test.s in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0AEE3EAB1CA9B9C3006F0348 /* test.s */; };
+		0AEE3EB01CA9BF87006F0348 /* assembler.c in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE3EAE1CA9BF87006F0348 /* assembler.c */; };
+		0AEE3EB41CA9C1B7006F0348 /* label_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE3EB21CA9C1B7006F0348 /* label_list.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +30,11 @@
 		0AEE3EA11CA9B839006F0348 /* stackyII-as */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "stackyII-as"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AEE3EA41CA9B83A006F0348 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0AEE3EAB1CA9B9C3006F0348 /* test.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = test.s; sourceTree = "<group>"; };
+		0AEE3EAE1CA9BF87006F0348 /* assembler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = assembler.c; sourceTree = "<group>"; };
+		0AEE3EAF1CA9BF87006F0348 /* assembler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = assembler.h; sourceTree = "<group>"; };
+		0AEE3EB11CA9C147006F0348 /* opcode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opcode.h; sourceTree = "<group>"; };
+		0AEE3EB21CA9C1B7006F0348 /* label_list.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = label_list.c; sourceTree = "<group>"; };
+		0AEE3EB31CA9C1B7006F0348 /* label_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = label_list.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +51,7 @@
 		0AEE3E981CA9B839006F0348 = {
 			isa = PBXGroup;
 			children = (
+				0AEE3EB11CA9C147006F0348 /* opcode.h */,
 				0AEE3EA31CA9B839006F0348 /* stackyII-as */,
 				0AEE3EA21CA9B839006F0348 /* Products */,
 			);
@@ -62,6 +70,10 @@
 			children = (
 				0AEE3EA41CA9B83A006F0348 /* main.c */,
 				0AEE3EAB1CA9B9C3006F0348 /* test.s */,
+				0AEE3EAE1CA9BF87006F0348 /* assembler.c */,
+				0AEE3EAF1CA9BF87006F0348 /* assembler.h */,
+				0AEE3EB21CA9C1B7006F0348 /* label_list.c */,
+				0AEE3EB31CA9C1B7006F0348 /* label_list.h */,
 			);
 			path = "stackyII-as";
 			sourceTree = "<group>";
@@ -122,6 +134,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AEE3EB41CA9C1B7006F0348 /* label_list.c in Sources */,
+				0AEE3EB01CA9BF87006F0348 /* assembler.c in Sources */,
 				0AEE3EA51CA9B83A006F0348 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "assembler.h"
 #define VERSION 0.1
 void* readf(FILE* fp){
 	void* buf = NULL;
@@ -58,10 +59,10 @@ int main(int argc, char * argv[]) {
 	}
 	printf("input: %s output: %s\n",inputfile,outputfile);
 	FILE* inputFP = fopen(inputfile, "r");
-	char* input = readf(inputFP);
-	fclose(inputFP);
-	printf("%s\n",input);
-	free(input);
+	FILE* outputFP = fopen(outputfile, "wb");
+	assemble_pass1(inputFP);
+	
+	
     return 0;
 }
 
