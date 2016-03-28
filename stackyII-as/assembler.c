@@ -22,14 +22,19 @@ void assemble_pass1(FILE* source){
 	while ((read = getline(&line, &len, source)) != -1) {
 		char* index;
 		line += strspn(line," \t");
-		printf("%s",line);
+		if((index = strchr(line, (int)';')) != NULL){*index = 0;}
+		if((index = strchr(line, (int)'\n')) != NULL){*index = 0;}
+		if(*line == 0){continue;} //if line is empty
+		printf("%s\n",line);
 		if((index = strchr(line, (int)':')) != NULL){ //its a label
 			*index = 0;
 			char* label_str = malloc((index-line)+1);
 			strcpy(label_str, line);
 			vector_append(&labels, (label){address,label_str});
+		}else{//its an instruction
+			address+=2;
 		}
 	}
-	puts("\n");
+	
 	vector_print(&labels);
 }

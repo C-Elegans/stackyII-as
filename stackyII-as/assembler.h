@@ -10,6 +10,7 @@
 #define assembler_h
 
 #include <stdio.h>
+
 void assemble_pass1(FILE* source);
 
 #endif /* assembler_h */
