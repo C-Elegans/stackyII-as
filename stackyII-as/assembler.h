@@ -12,5 +12,5 @@
 #include <stdio.h>
 
 void assemble_pass1(FILE* source);
-
+void assemble_pass2(FILE* source, FILE* dest);
 #endif /* assembler_h */

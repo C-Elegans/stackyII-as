@@ -61,7 +61,7 @@ int main(int argc, char * argv[]) {
 	FILE* inputFP = fopen(inputfile, "r");
 	FILE* outputFP = fopen(outputfile, "wb");
 	assemble_pass1(inputFP);
-	
+	assemble_pass2(inputFP, outputFP);
 	
     return 0;
 }

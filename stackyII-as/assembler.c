@@ -11,7 +11,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include "opcode.h"
 labelVector labels;
+char* strip_crap(char* line){
+	char* index;
+	line += strspn(line," \t");
+	if((index = strchr(line, (int)';')) != NULL){*index = 0;}
+	if((index = strchr(line, (int)'\n')) != NULL){*index = 0;}
+	return line;
+}
 void assemble_pass1(FILE* source){
 	vector_init(&labels);
 	char* line = NULL;
@@ -21,9 +29,7 @@ void assemble_pass1(FILE* source){
 	int address = 0;
 	while ((read = getline(&line, &len, source)) != -1) {
 		char* index;
-		line += strspn(line," \t");
-		if((index = strchr(line, (int)';')) != NULL){*index = 0;}
-		if((index = strchr(line, (int)'\n')) != NULL){*index = 0;}
+		line = strip_crap(line);
 		if(*line == 0){continue;} //if line is empty
 		printf("%s\n",line);
 		if((index = strchr(line, (int)':')) != NULL){ //its a label
@@ -37,4 +43,24 @@ void assemble_pass1(FILE* source){
 	}
 	
 	vector_print(&labels);
+}
+void assemble_pass2(FILE* source, FILE* dest){
+	fseek(source, 0L, SEEK_SET);
+	char* line = NULL;
+	if(source == NULL)return;
+	size_t len = 0;
+	ssize_t read =0;
+	int address = 0;
+	while ((read = getline(&line, &len, source)) != -1) {
+		char* index;
+		line = strip_crap(line);
+		if(*line == 0){continue;} //if line is empty
+		printf("%s\n",line);
+		if((index = strchr(line, (int)':')) != NULL){ //its a label
+			continue;
+		}else{//its an instruction
+			decodeInstruction(line, &labels);
+			address+=2;
+		}
+	}
 }
