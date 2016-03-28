@@ -8,6 +8,7 @@
 
 #include "label_list.h"
 #include <stdlib.h>
+#include <string.h>
 #define INITIAL_CAPACITY 20
 void vector_init(labelVector* vector){
 	vector->size = 0;
@@ -57,4 +58,14 @@ void vector_print(labelVector* vector){
 		printf("label: %s at %d\n",l.label,l.address);
 		index++;
 	}
+}
+label vector_find_label(labelVector* vector,char* str){
+	for(int i=0;i<vector->size;i++){
+		label l = vector->labels[i];
+		if(strcmp(l.label, str) == 0){
+			return l;
+		}
+	}
+	
+	return (label){0,NULL};
 }

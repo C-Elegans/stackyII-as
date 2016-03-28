@@ -33,4 +33,5 @@ void vector_double_capacity_if_full(labelVector *vector);
 void vector_free(labelVector *vector);
 
 void vector_print(labelVector* vector);
+label vector_find_label(labelVector* vector,char* str);
 #endif /* label_list_h */

@@ -12,6 +12,7 @@
 		0AEE3EB01CA9BF87006F0348 /* assembler.c in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE3EAE1CA9BF87006F0348 /* assembler.c */; };
 		0AEE3EB41CA9C1B7006F0348 /* label_list.c in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE3EB21CA9C1B7006F0348 /* label_list.c */; };
 		0AEE3EBB1CA9CBDE006F0348 /* opcode.c in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE3EBA1CA9CBDE006F0348 /* opcode.c */; };
+		0AEE3EBD1CA9E00C006F0348 /* isa.md in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE3EBC1CA9E00C006F0348 /* isa.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,7 @@
 		0AEE3EB31CA9C1B7006F0348 /* label_list.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = label_list.h; sourceTree = "<group>"; };
 		0AEE3EB61CA9CA2F006F0348 /* opcode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opcode.h; sourceTree = "<group>"; };
 		0AEE3EBA1CA9CBDE006F0348 /* opcode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = opcode.c; sourceTree = "<group>"; };
+		0AEE3EBC1CA9E00C006F0348 /* isa.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = isa.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				0AEE3EB31CA9C1B7006F0348 /* label_list.h */,
 				0AEE3EB61CA9CA2F006F0348 /* opcode.h */,
 				0AEE3EBA1CA9CBDE006F0348 /* opcode.c */,
+				0AEE3EBC1CA9E00C006F0348 /* isa.md */,
 			);
 			path = "stackyII-as";
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AEE3EBD1CA9E00C006F0348 /* isa.md in Sources */,
 				0AEE3EB41CA9C1B7006F0348 /* label_list.c in Sources */,
 				0AEE3EB01CA9BF87006F0348 /* assembler.c in Sources */,
 				0AEE3EA51CA9B83A006F0348 /* main.c in Sources */,
