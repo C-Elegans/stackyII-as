@@ -12,24 +12,7 @@
 #include <unistd.h>
 #include "assembler.h"
 #define VERSION 0.1
-void* readf(FILE* fp){
-	void* buf = NULL;
-	if(fp != NULL){
-		if (fseek(fp, 0L, SEEK_END) == 0) {
-		size_t bufsize = ftell(fp);
-		if(bufsize == -1){fprintf(stderr,"Error reading file!\n");exit(-1);}
-		buf = malloc(sizeof(char)*(bufsize+1));
-		fseek(fp,0L, SEEK_SET);
-		size_t newlen = fread(buf, sizeof(char), bufsize, fp);
-		if(newlen == 0){fprintf(stderr,"Error reading file!\n");exit(-1);}
-		else{
-			((char*)buf)[newlen++] = '\0';
-		}
-		}
-		
-	}
-	return buf;
-}
+
 int main(int argc, char * argv[]) {
 	char* inputfile = NULL;
 	char* outputfile = NULL;
@@ -60,6 +43,14 @@ int main(int argc, char * argv[]) {
 	printf("input: %s output: %s\n",inputfile,outputfile);
 	FILE* inputFP = fopen(inputfile, "r");
 	FILE* outputFP = fopen(outputfile, "wb");
+	if(inputFP == NULL){
+		fprintf(stderr, "Error reading file:%s\n",inputfile);
+		exit(-1);
+	}
+	if(outputFP == NULL){
+		fprintf(stderr, "Error writing file:%s\n",outputfile);
+		exit(-1);
+	}
 	assemble_pass1(inputFP);
 	assemble_pass2(inputFP, outputFP);
 	

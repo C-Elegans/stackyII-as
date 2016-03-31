@@ -34,9 +34,9 @@
 #define FETCH 23
 #define STORE 24
 
-#define FRAME 0x1000
-
-#define LOCAL 0x3000
+#define FRAME 0x0400
+#define SLOCAL 0x0C00
+#define LOCAL 0x0800
 #define JUMP 0x2000
 #define CALL 0x4000
 #define CJUMP 0x6000

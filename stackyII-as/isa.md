@@ -57,6 +57,8 @@ cjump: 0x6000,0x1FFF - pops the top of the stack, and jumps if the value is not 
 
 push: 0x8000,0x7FFF - pushes the immediate value onto the stack
 
-frame: 0x1000, 0x0FFF - pushes the base pointer on the stack, and creates space for X amount of variables 
+frame: 0x0400, 0x03FF - pushes the base pointer on the stack, and creates space for X amount of variables 
 
-local: 0x3000,0x0FFF - reads the address formed by the immediate value+the base pointer and pushes it onto the stack
+local: 0x0800,0x03FF - reads the address formed by the immediate value+the base pointer and pushes it onto the stack
+
+slocal: 0x0C00,0x3ff - pops the top off the stack and stores it at the immediate value + the base pointer
